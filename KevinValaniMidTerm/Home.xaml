@@ -1,0 +1,33 @@
+﻿<Page x:Class="KevinValaniMidTerm.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KevinValaniMidTerm"
+      mc:Ignorable="d"
+      Loaded="Page_Loaded"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home">
+
+    <Grid Background="#FF444466">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="99*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="20 20 10 20" Background="#FF0E0E4B">
+            <Label Content="Length Of Square" Foreground="White" HorizontalAlignment="Center" Margin="10 10 10 2" FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbMaLength" TextWrapping="Wrap" Width="113" Height="28" Text="5" FontSize="18" FontWeight="Bold" TextAlignment="Center"/>
+            <Button x:Name="btnGenerate" Content="Generate" Padding="5" Margin="10" FontSize="16" FontWeight="Bold" Width="114" Click="btnGenerate_Click"></Button>
+            <Label Content="String To Search" Foreground="White" HorizontalAlignment="Center" Margin="10 10 10 2" FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="txtSearch" TextWrapping="Wrap" Width="113" Height="28" Text="facfg" FontSize="18" FontWeight="Bold" TextAlignment="Center"/>
+            <Button x:Name="btnSearch" Content="Search" Padding="5" Margin="10" FontSize="16" FontWeight="Bold" Width="114" Click="btnSearch_Click"></Button>
+            <TextBox x:Name="txtResult" Text="Game Result:" Padding="10" Margin="10" FontWeight="Bold" TextWrapping="Wrap" Width="252" Height="154" Background="Black" Foreground="White" HorizontalAlignment="Center" AcceptsReturn="True" IsReadOnly="True" FontSize="16" AcceptsTab="True" TextAlignment="Center"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10 20 20 20" Background="#FF0E0E4B">
+            <ScrollViewer Height="450" Width="500"  CanContentScroll="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" DataContext="{Binding SelectedItem, ElementName=lstItems}">
+                <TextBlock x:Name="mainGrid"  Padding="10" Foreground="White" TextAlignment="Center" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"><Run Text="Game Grid"/></TextBlock>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>
